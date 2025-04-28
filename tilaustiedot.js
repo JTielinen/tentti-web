@@ -1,20 +1,28 @@
-window.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('koko').addEventListener('change', paivitaSumma);
-  document.querySelectorAll('input[name="tayte"]').forEach(function(tayte) {
+document.addEventListener('DOMContentLoaded', function() {
+  const koko = document.getElementById('koko');
+  const taytteet = document.querySelectorAll('input[name="tayte"]');
+
+  if (koko) {
+    koko.addEventListener('change', paivitaSumma);
+  }
+
+  taytteet.forEach(function(tayte) {
     tayte.addEventListener('change', paivitaSumma);
   });
 });
 
 function paivitaSumma() {
-  let kokoHinta = parseInt(document.getElementById('koko').value) || 0;
-  let taytteet = document.querySelectorAll('input[name="tayte"]:checked');
+  const koko = document.getElementById('koko');
+  const taytteet = document.querySelectorAll('input[name="tayte"]:checked');
+
+  let kokoHinta = parseInt(koko.value) || 0;
   let taytteetHinta = 0;
 
   taytteet.forEach(function(tayte) {
     taytteetHinta += parseInt(tayte.value);
   });
 
-  let yhteensa = kokoHinta + taytteetHinta;
+  const yhteensa = kokoHinta + taytteetHinta;
   document.getElementById('summa').value = yhteensa;
 }
 
