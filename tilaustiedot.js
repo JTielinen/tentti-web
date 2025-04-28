@@ -26,7 +26,7 @@ function paivitaSumma() {
   document.getElementById('summa').value = yhteensa;
 }
 
-function NollaaKaikkiAsetukset() {
+function Tilaa() {
   document.getElementById('pizzaForm').reset();
   document.getElementById('summa').value = 0;
 }
