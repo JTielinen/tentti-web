@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 function paivitaSumma() {
-  let koko = document.getElementById('koko').value;
+  let kokoHinta = parseInt(document.getElementById('koko').value) || 0;
   let taytteet = document.querySelectorAll('input[name="tayte"]:checked');
   let taytteetHinta = 0;
 
@@ -14,8 +14,8 @@ function paivitaSumma() {
     taytteetHinta += parseInt(tayte.value);
   });
 
-  let summa = (parseInt(koko) || 0) + taytteetHinta;
-  document.getElementById('summa').value = summa;
+  let yhteensa = kokoHinta + taytteetHinta;
+  document.getElementById('summa').value = yhteensa;
 }
 
 function NollaaKaikkiAsetukset() {
